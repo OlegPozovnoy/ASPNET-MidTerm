@@ -14,10 +14,12 @@ namespace COMP2084MidtermW2019.Models
         [StringLength(50)]
         public string Name { get; set; }
 
+        [Display(Name = "Year Founded")]
         public int YearFounded { get; set; }
 
         public int Population { get; set; }
 
+        [Display(Name= "Country")]
         public int CountryId { get; set; }
 
         public virtual Country Country { get; set; }

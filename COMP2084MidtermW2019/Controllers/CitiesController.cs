@@ -19,7 +19,7 @@ namespace COMP2084MidtermW2019.Controllers
         {
             //var cities = db.Cities.Include(c => c.Country);
             //return View();
-            return View(db.Cities.ToList());
+            return View(db.Cities.OrderBy(p => p.Country.Name).ThenBy(p => p.Name).ToList());
         }
 
         // GET: Cities/Details/5
