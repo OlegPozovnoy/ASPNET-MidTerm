@@ -12,6 +12,7 @@ namespace COMP2084MidtermW2019.Models
 
         [Required]
         [StringLength(50)]
+        [Display(Name = "City")]
         public string Name { get; set; }
 
         [Display(Name = "Year Founded")]
