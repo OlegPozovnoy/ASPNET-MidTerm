@@ -96,6 +96,7 @@ namespace COMP2084MidtermW2019.Controllers
         }
 
         // GET: Cities/Delete/5
+        [Authorize]
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -113,6 +114,7 @@ namespace COMP2084MidtermW2019.Controllers
         // POST: Cities/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+        [Authorize]
         public ActionResult DeleteConfirmed(int id)
         {
             City city = db.Cities.Find(id);
