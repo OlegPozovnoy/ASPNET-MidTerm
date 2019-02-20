@@ -40,7 +40,7 @@ namespace COMP2084MidtermW2019.Controllers
         // GET: Cities/Create
         public ActionResult Create()
         {
-            ViewBag.CountryId = new SelectList(db.Countries, "CountryId", "Name");
+            ViewBag.CountryId = new SelectList(db.Countries.OrderBy(p=>p.Name), "CountryId", "Name");
             return View();
         }
 
@@ -74,7 +74,7 @@ namespace COMP2084MidtermW2019.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.CountryId = new SelectList(db.Countries, "CountryId", "Name", city.CountryId);
+            ViewBag.CountryId = new SelectList(db.Countries.OrderBy(p => p.Name), "CountryId", "Name", city.CountryId);
             return View(city);
         }
 
