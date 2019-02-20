@@ -6,6 +6,7 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using COMP2084MidtermW2019.Models;
 
 namespace COMP2084MidtermW2019.Controllers
 {
@@ -16,8 +17,9 @@ namespace COMP2084MidtermW2019.Controllers
         // GET: Cities
         public ActionResult Index()
         {
-            var cities = db.Cities.Include(c => c.Country);
-            return View();
+            //var cities = db.Cities.Include(c => c.Country);
+            //return View();
+            return View(db.Cities.ToList());
         }
 
         // GET: Cities/Details/5
